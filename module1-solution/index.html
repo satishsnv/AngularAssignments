@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app='LunchCheck'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <title> First assignment</title>
+  </head>
+
+  <body>
+      <div ng-controller='LunchCheckController'>
+        <h1> Check your lunch items</h1>
+        <label for="txtInput">lunchItems:</label>
+        <input id="txtInput" type="text" ng-model='items' ng-style='borderColor' placeholder="Eg: rice, fries, so on"/>
+        <span ng-show='emptyValues'>empty item is not considered in count</span>
+        <p ng-style='txtColor'>{{comments}}</p>
+        <button type="button" ng-click='checkItems()'>Check If Too Much</button>
+      </div>
+  </body>
+</html>
