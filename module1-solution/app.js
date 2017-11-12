@@ -5,7 +5,6 @@
   LunchCheckController.$inject = ['$scope'];
   function LunchCheckController($scope){
     $scope.items = "";
-    $scope.emptyValues = false;
     $scope.checkItems = function(){
       if($scope.items.length > 0){
         $scope.txtColor = {'color':'green'};
@@ -14,6 +13,8 @@
         var itemCount = getItemCount(arrayItems);
         if(itemCount != arrayItems.length){
           $scope.emptyValues = true;
+        }else{
+          $scope.emptyValues = false;
         }
         if(itemCount <= 3){
           $scope.comments = "Enjoy!"
